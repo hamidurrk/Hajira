@@ -1,4 +1,4 @@
-# Hajira - Attendance Management System 
+# HAJIRA - Attendance Management System 
 
 Welcome to Hajira, your comprehensive Attendance Management System designed to streamline student attendance tracking and management. Our platform combines the power of PHP, HTML, MySQL, and Bootstrap to deliver a user-friendly and efficient solution for educational institutions and organizations.
 
