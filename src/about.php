@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <title>About - Hajira</title>
+    <title>About - HAJIRA</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
