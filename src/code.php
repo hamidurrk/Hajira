@@ -2,8 +2,7 @@
 session_start();
 require 'dbcon.php';
 
-if(isset($_POST['delete_student']))
-{
+if(isset($_POST['delete_student'])) {
     $id = mysqli_real_escape_string($con, $_POST['delete_student']);
 
     $query = "DELETE FROM students WHERE id='$id' ";
@@ -19,6 +18,31 @@ if(isset($_POST['delete_student']))
     {
         $_SESSION['message'] = "Student Not Deleted";
         header("Location: class.php");
+        exit(0);
+    }
+}
+
+if(isset($_POST['delete_sheet'])) {
+    $id = mysqli_real_escape_string($con, $_POST['delete_sheet']);
+    
+    $query1 = "SELECT * FROM sheets WHERE sheet_id='$id' ";
+    $result1 = mysqli_query($con, $query1);
+    $row = $result1->fetch_assoc();
+    $table = $row["sheet_name"]; 
+
+    $query2 = "DROP TABLE `$table`;";
+    $query_run2 = mysqli_query($con, $query2);
+
+    if($query_run2) {   
+        $query3 = "DELETE FROM sheets WHERE sheet_id='$id' ";
+        $query_run3 = mysqli_query($con, $query3);
+
+        $_SESSION['message'] = $table . "Sheet Deleted Successfully";
+        header("Location: attendance_sheet_list.php");
+        exit(0);
+    } else {
+        $_SESSION['message'] = "Sheet Not Deleted";
+        header("Location: attendance_sheet_list.php");
         exit(0);
     }
 }
@@ -89,7 +113,6 @@ if(isset($_POST['reset_id']))
     mysqli_query($con, $query1);
     mysqli_query($con, $query2);
     mysqli_query($con, $query3);
-
 }
 
 if(isset($_POST['generate_sheet']))

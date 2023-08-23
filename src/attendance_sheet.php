@@ -45,19 +45,20 @@
         </div>
         <div class="row mt-5">
             <div class="col-md-6">
-                <a href="generate_attendance_sheet.php" class="btn btn-secondary btn-block btn-lg mb-3">Generate New Attendance Sheet</a>
+                <a href="generate_attendance_sheet.php" class="btn btn-secondary btn-block btn-lg mb-3">Generate A New Attendance Sheet</a>
             </div>
             <div class="col-md-6">
-                <a href="view_attendance.php" class="btn btn-secondary btn-block btn-lg mb-3">View Attendance Records</a>
+                <a href="attendance_sheet_list.php" class="btn btn-secondary btn-block btn-lg mb-3">List of All Attendance Sheets</a>
             </div>
+
         </div>
         <div class="row">
-            <div class="col-md-6">
-                <a href="student-create.php" class="btn btn-secondary btn-block btn-lg mb-3">Enter Student Information</a>
-            </div>
-            <div class="col-md-6">
+            <!-- <div class="col-md-6">
+                <a href="view_attendance.php" class="btn btn-secondary btn-block btn-lg mb-3">View Attendance Records</a>
+            </div> -->
+            <!-- <div class="col-md-6">
                 <a href="attendance_sheet.php" class="btn btn-secondary btn-block btn-lg mb-3">Attendance Sheet</a>
-            </div>
+            </div> -->
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
