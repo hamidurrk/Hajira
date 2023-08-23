@@ -60,7 +60,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>Attendance Sheet Name: <?= $row["sheet_name"]; ?>
-                            <a href="attendance_sheet.php" class="btn btn-primary float-end">Back</a>
+                            <a href="attendance_sheet.php" class="btn btn-outline-primary float-end">Back</a>
                         </h4>
                     </div>
                     <div class="card-body">

@@ -80,10 +80,10 @@
                                                 <td><?= $student['phone']; ?></td>
                                                 
                                                 <td>
-                                                    <a href="student-view.php?id=<?= $student['id']; ?>" class="btn btn-info btn-sm">View</a>
-                                                    <a href="student-edit.php?id=<?= $student['id']; ?>" class="btn btn-success btn-sm">Edit</a>
+                                                    <a href="student-view.php?id=<?= $student['id']; ?>" class="btn btn-outline-info btn-sm">View</a>
+                                                    <a href="student-edit.php?id=<?= $student['id']; ?>" class="btn btn-outline-success btn-sm">Edit</a>
                                                     <form action="code.php" method="POST" class="d-inline">
-                                                        <button type="submit" name="delete_student" value="<?=$student['id'];?>" class="btn btn-danger btn-sm">Delete</button>
+                                                        <button type="submit" name="delete_student" value="<?=$student['id'];?>" class="btn btn-outline-danger btn-sm">Delete</button>
                                                     </form>
                                                 </td>
                                             </tr>

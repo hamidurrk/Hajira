@@ -46,7 +46,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>List of All Attendance Sheets
-                            <a href="attendance_sheet.php" class="btn btn-primary float-end">Back</a>
+                            <a href="attendance_sheet.php" class="btn btn-outline-primary float-end">Back</a>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -78,9 +78,9 @@
                                                 <td><?= $sheet['batch']; ?></td>
                                                 
                                                 <td>
-                                                    <a href="view_attendance_sheet.php?id=<?= $sheet['sheet_id']; ?>" class="btn btn-info btn-sm">View</a>
+                                                    <a href="view_attendance_sheet.php?id=<?= $sheet['sheet_id']; ?>" class="btn btn-outline-info btn-sm">View</a>
                                                     <form action="code.php" method="POST" class="d-inline">
-                                                        <button type="submit" name="delete_sheet" value="<?=$sheet['sheet_id'];?>" class="btn btn-danger btn-sm">Delete</button>
+                                                        <button type="submit" name="delete_sheet" value="<?=$sheet['sheet_id'];?>" class="btn btn-outline-danger btn-sm">Delete</button>
                                                     </form>
                                                 </td>
                                             </tr>

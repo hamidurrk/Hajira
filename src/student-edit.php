@@ -47,7 +47,7 @@ require 'dbcon.php';
                 <div class="card">
                     <div class="card-header">
                         <h4>Student Edit 
-                            <a href="class.php" class="btn btn-danger float-end">BACK</a>
+                            <a href="class.php" class="btn btn-outline-primary float-end">Back</a>
                         </h4>
                     </div>
                     <div class="card-body">

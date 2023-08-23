@@ -46,7 +46,7 @@ session_start();
                 <div class="card">
                     <div class="card-header">
                         <h4>Add New Student 
-                            <a href="class.php" class="btn btn-danger float-end">BACK</a>
+                            <a href="index.php" class="btn btn-outline-primary float-end">Back</a>
                         </h4>
                     </div>
                     <div class="card-body">

@@ -46,7 +46,7 @@ session_start();
                 <div class="card">
                     <div class="card-header">
                         <h4>Create A New Sheet 
-                        <a href="attendance_sheet.php" class="btn btn-danger float-end">BACK</a>
+                        <a href="attendance_sheet.php" class="btn btn-outline-primary float-end">Back</a>
                         </h4>
                     </div>
                     <div class="card-body">
