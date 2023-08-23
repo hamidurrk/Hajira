@@ -9,8 +9,8 @@
         $result1 = mysqli_query($con, $query1);
         $row = $result1->fetch_assoc();
     }
-    $last_table = $row["sheet_name"]; 
-    $query2 = "SELECT * FROM `$last_table`";
+    $selected_sheet = $row["sheet_name"]; 
+    $query2 = "SELECT * FROM `$selected_sheet`";
     $result2 = mysqli_query($con, $query2);
 
     $columns = array();
@@ -61,7 +61,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>Attendance Sheet Name: <?= $row["sheet_name"]; ?>
-                            <a href="attendance_sheet_list.php" class="btn btn-success float-end">Take Attendance Now</a>
+                            <a href="take_attendance.php?id=<?= $id; ?>" class="btn btn-success float-end">Take Attendance Now</a>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -79,24 +79,35 @@
                             </thead>
                             <tbody>
                                 <?php 
-                                $query3 = "SELECT id FROM `$last_table` ORDER BY id DESC LIMIT 1;";
+                                $query3 = "SELECT id FROM `$selected_sheet` ORDER BY id DESC LIMIT 1;";
                                 $result3 = $con->query($query3);
                                 $id_limit = $result3->fetch_assoc();
                                 // echo $id_limit['id'];
                                 // $row = $result2->fetch_assoc();
                                 // echo $row["name"];
                                 for ($i = 1; $i <= $id_limit['id']; $i ++) {
-                                    $query2 = "SELECT * FROM `$last_table` WHERE id = $i";
+                                    $query2 = "SELECT * FROM `$selected_sheet` WHERE id = $i";
                                     $result2 = mysqli_query($con, $query2);
                                     $row = $result2->fetch_assoc();
                                     ?>
                                         <tr>
                                     <?php
-                                    foreach($columns as $column)
-                                    {      
-                                    ?>
-                                        <td><?= $row[$column]; ?></td>
-                                    <?php
+                                    $flag = 0;
+                                    foreach($columns as $column) {
+                                        if($row[$column] == 1 and $flag) {
+                                            ?>
+                                            <td><button type="button" class="btn btn-lg btn-success" disabled> P </button></td>
+                                        <?php
+                                        } elseif($row[$column] == 0) {
+                                            ?>
+                                            <td><button type="button" class="btn btn-lg btn-danger" disabled> A </button></td>
+                                        <?php
+                                        } else {
+                                            $flag = 1;
+                                            ?>
+                                            <td><?= $row[$column]; ?></td>
+                                        <?php
+                                        }
                                     }?> 
                                     </tr>
                                     <?php

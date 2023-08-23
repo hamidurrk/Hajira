@@ -76,6 +76,26 @@ if(isset($_POST['update_student']))
 
 }
 
+if(isset($_POST['save_attendance'])) { 
+    $attendance_data = $_POST['attendance'];
+    $sheet = $_POST['save_attendance'];
+    $current_date_time = date('dmY_Hi');
+    $query_for_add = "ALTER TABLE `$sheet` ADD COLUMN `$current_date_time` TINYINT(1) DEFAULT 0;";
+    $result_for_add = mysqli_query($con, $query_for_add);
+
+    $i = 1;
+    foreach ($attendance_data as $attendance_status) {
+        $update_query = "UPDATE `$sheet` SET `$current_date_time` = '$attendance_status' WHERE id = $i";
+        $con->query($update_query);
+        $i += 1;
+    }
+    
+    $_SESSION['message'] = "Attendance Updated Successfully";
+    header("Location: attendance_sheet_list.php");
+    exit(0);
+
+}
+
 
 if(isset($_POST['save_student']))
 {
