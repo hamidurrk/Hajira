@@ -27,13 +27,14 @@ if(isset($_POST['update_student']))
 {   
     $id = mysqli_real_escape_string($con, $_POST['id']);
     $dept = mysqli_real_escape_string($con, $_POST['dept']);
+    $batch = mysqli_real_escape_string($con, $_POST['batch']);
     $roll = mysqli_real_escape_string($con, $_POST['roll']);
+    $st_id = mysqli_real_escape_string($con, $_POST['st_id']);
     $name = mysqli_real_escape_string($con, $_POST['name']);
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $phone = mysqli_real_escape_string($con, $_POST['phone']);
-    $reg = mysqli_real_escape_string($con, $_POST['reg']);
 
-    $query = "UPDATE students SET dept='$dept', roll='$roll', name='$name', email='$email', phone='$phone' WHERE id='$id' ";
+    $query = "UPDATE students SET dept='$dept', batch='$batch', roll='$roll', name='$name', email='$email', phone='$phone' WHERE id='$id' ";
     $query_run = mysqli_query($con, $query);
 
     if($query_run)
@@ -55,13 +56,14 @@ if(isset($_POST['update_student']))
 if(isset($_POST['save_student']))
 {
     $dept = mysqli_real_escape_string($con, $_POST['dept']);
+    $batch = mysqli_real_escape_string($con, $_POST['batch']);
     $roll = mysqli_real_escape_string($con, $_POST['roll']);
+    $st_id = mysqli_real_escape_string($con, $_POST['st_id']);
     $name = mysqli_real_escape_string($con, $_POST['name']);
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $phone = mysqli_real_escape_string($con, $_POST['phone']);
-    $reg = mysqli_real_escape_string($con, $_POST['reg']);
 
-    $query = "INSERT INTO students (dept,roll,name,email,phone,reg) VALUES ('$dept','$roll','$name','$email','$phone','$reg')";
+    $query = "INSERT INTO students (dept,batch,roll,st_id,name,email,phone) VALUES ('$dept','$batch','$roll','$st_id','$name','$email','$phone')";
 
     $query_run = mysqli_query($con, $query);
     if($query_run)
@@ -80,13 +82,61 @@ if(isset($_POST['save_student']))
 
 if(isset($_POST['reset_id']))
 {
-    $query1 = "ALTER TABLE students DROP reg;";
+    $query1 = "ALTER TABLE students DROP st_id;";
     $query2 = "ALTER TABLE students AUTO_INCREMENT = 1;";
     $query3 = "ALTER TABLE students ADD id int UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY FIRST;";
 
     mysqli_query($con, $query1);
     mysqli_query($con, $query2);
     mysqli_query($con, $query3);
+
+}
+
+if(isset($_POST['generate_sheet']))
+{   
+    $dept = mysqli_real_escape_string($con, $_POST['dept']);
+    $batch = mysqli_real_escape_string($con, $_POST['batch']);
+    $course = mysqli_real_escape_string($con, $_POST['course']);
+
+    $table_name = $course . "_" . $dept . "_" . strval($batch);
+    echo $table_name;
+
+    $result = $con->query("SHOW TABLES LIKE '$table_name';");
+
+    if ($result->num_rows > 0) {
+        echo "Table already exists.";
+    } else {
+        $query = "CREATE TABLE `$table_name` (
+            id INT NOT NULL AUTO_INCREMENT,
+            st_id INT NULL,
+            name VARCHAR(255) NULL,
+            PRIMARY KEY (`id`)
+        );";
+        echo $query;
+        $query_run = mysqli_query($con, $query);
+    }
+
+    if($query_run)
+    {
+        $query = "INSERT INTO `$table_name` (st_id, name)
+        SELECT st_id, name
+        FROM students
+        WHERE dept = '$dept' AND batch = $batch
+        ORDER BY st_id ASC;";
+        echo $query;
+
+        $query_run = mysqli_query($con, $query);
+
+        $_SESSION['message'] = $table_name . " Attendance Sheet has been generated";
+        header("Location: attendance_sheet.php");
+        exit(0);
+    }
+    else
+    {
+        $_SESSION['message'] = "Attendance Sheet generation failed!";
+        header("Location: generate_attendance_sheet.php");
+        exit(0);
+    }
 
 }
 

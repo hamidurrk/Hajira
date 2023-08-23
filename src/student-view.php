@@ -90,9 +90,9 @@ require 'dbcon.php';
                                         </p>
                                     </div>
                                     <div class="mb-3">
-                                        <label>Student Registration Number</label>
+                                        <label>Student ID Number</label>
                                         <p class="form-control">
-                                            <?=$student['reg'];?>
+                                            <?=$student['st_id'];?>
                                         </p>
                                     </div>
                                 <?php

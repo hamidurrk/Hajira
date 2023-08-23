@@ -1,0 +1,62 @@
+The faculty of Agriculture has the following academic departments:
+
+    Department of Agronomy
+    Department of Soil Science
+    Department of Entomology
+    Department of Horticulture
+    Department of Plant Pathology
+    Department of Crop Botany
+    Department of Genetics & Plant Breeding
+    Department of Agricultural Extension Education
+    Department of Agricultural Chemistry
+    Department of Biochemistry & Molecular Biology
+    Department of Languages
+    Department of Agroforestry
+    Department of Biotechnology
+    Department of Environmental Science
+    Department of Seed Science and Technology
+    Department of Physics
+    Department of Agrometeorology
+
+The faculty of Veterinary Science has the following academic departments:
+
+  Department of Anatomy & Histology
+  Department of Microbiology & Hygiene
+  Department of Physiology
+  Department of Pharmacology
+  Department of Parasitology
+  Department of Pathology
+  Department of Medicine
+  Department of Surgery & Obstetrics
+
+ The faculty of Animal Husbandry has the following academic departments:
+
+1. Department of Animal Breeding & Genetics
+2. Department of Animal Science
+3. Department of Animal Nutrition
+4. Department of Dairy Science
+5. Department of Poultry Science
+
+Faculty of Agricultural Economics & Rural Sociology has the following academic departments:
+    Agricultural Economics
+    Agricultural Finance and Banking
+    Agricultural and Applied Statistics
+    Agribusiness and Marketing
+    Rural Sociology
+
+The faculty of Agricultural Engineering & Technology has the following academic departments: 
+
+    Department of Farm Structure & Environmental Engineering
+    Department of Farm Power & Machinery
+    Department of Irrigation & Water Management
+    Department of Food Technology & Rural Industries
+    Department of Computer Science & Mathematics 
+
+
+The faculty of Fisheries has the following academic departments:
+
+    Department of Fisheries Biology and Genetics
+    Department of Aquaculture
+    Department of Fisheries Management
+    Department of Fisheries Technology
+    Department of Marine Fisheries Science

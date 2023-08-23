@@ -12,7 +12,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <title>Hajira</title>
+    <title>Attendance | Hajira</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -40,12 +40,12 @@
   
     <div class="container mt-5">
         <div class="jumbotron">
-            <h1 class="display-4"><b>HAJIRA</b></h1>
-            <p class="lead">A student attendance management system for Bangladesh Agricultural University.</p>
+            <h1 class="display-4"><b>Attendance Sheet</b></h1>
+            <p class="lead">Generate new attendance sheet or work with the existing ones.</p>
         </div>
         <div class="row mt-5">
             <div class="col-md-6">
-                <a href="class.php" class="btn btn-secondary btn-block btn-lg mb-3">View All Students</a>
+                <a href="generate_attendance_sheet.php" class="btn btn-secondary btn-block btn-lg mb-3">Generate New Attendance Sheet</a>
             </div>
             <div class="col-md-6">
                 <a href="view_attendance.php" class="btn btn-secondary btn-block btn-lg mb-3">View Attendance Records</a>
@@ -53,7 +53,7 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <a href="student-create.php" class="btn btn-secondary btn-block btn-lg mb-3">Add New Student</a>
+                <a href="student-create.php" class="btn btn-secondary btn-block btn-lg mb-3">Enter Student Information</a>
             </div>
             <div class="col-md-6">
                 <a href="attendance_sheet.php" class="btn btn-secondary btn-block btn-lg mb-3">Attendance Sheet</a>

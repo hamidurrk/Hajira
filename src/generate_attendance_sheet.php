@@ -45,8 +45,8 @@ session_start();
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Add New Student 
-                            <a href="class.php" class="btn btn-danger float-end">BACK</a>
+                        <h4>Create A New Sheet 
+                        <a href="attendance_sheet.php" class="btn btn-danger float-end">BACK</a>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -83,33 +83,15 @@ session_start();
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label>Name</label>
-                                <input type="text" name="name" class="form-control">
-                            </div>
-                            <div class="row g-3">
-                                <div class="col">
-                                    <label>Batch Number</label>
-                                    <input type="text" name="batch" class="form-control">
-                                </div>
-                                <div class="col">
-                                    <label>Roll</label>
-                                    <input type="text" name="roll" class="form-control">
-                                </div>
-                                <div class="col">
-                                    <label>Student ID</label>
-                                    <input type="text" name="st_id" class="form-control">
-                                </div>
+                                <label>Batch Number</label>
+                                <input type="text" name="batch" class="form-control">
                             </div>
                             <div class="mb-3">
-                                <label>Email</label>
-                                <input type="email" name="email" class="form-control">
+                                <label>Course Code</label>
+                                <input type="text" name="course" class="form-control">
                             </div>
                             <div class="mb-3">
-                                <label>Contact Number</label>
-                                <input type="text" name="phone" class="form-control">
-                            </div>
-                            <div class="mb-3">
-                                <button type="submit" name="save_student" class="btn btn-primary">Save Student</button>
+                                <button type="submit" name="generate_sheet" class="btn btn-primary">Filter & Generate</button>
                             </div>
 
                         </form>

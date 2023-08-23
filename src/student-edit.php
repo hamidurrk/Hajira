@@ -71,6 +71,10 @@ require 'dbcon.php';
                                         <input type="text" name="dept" value="<?=$student['dept'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
+                                        <label>Batch Number</label>
+                                        <input type="text" name="batch" value="<?=$student['batch'];?>" class="form-control">
+                                    </div>
+                                    <div class="mb-3">
                                         <label>Roll</label>
                                         <input type="text" name="roll" value="<?=$student['roll'];?>" class="form-control">
                                     </div>
@@ -87,8 +91,8 @@ require 'dbcon.php';
                                         <input type="text" name="phone" value="<?=$student['phone'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
-                                        <label>Registration no</label>
-                                        <input type="text" name="reg" value="<?=$student['reg'];?>" class="form-control">
+                                        <label>Student ID Number</label>
+                                        <input type="text" name="st_id" value="<?=$student['st_id'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
                                         <button type="submit" name="update_student" class="btn btn-primary">
