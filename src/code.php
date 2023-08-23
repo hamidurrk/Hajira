@@ -127,8 +127,11 @@ if(isset($_POST['generate_sheet']))
 
         $query_run = mysqli_query($con, $query);
 
+        $query = "INSERT INTO sheets (sheet_name, course, dept, batch) VALUES ('$table_name','$course','$dept', $batch)";
+        $query_run = mysqli_query($con, $query);
+
         $_SESSION['message'] = $table_name . " Attendance Sheet has been generated";
-        header("Location: attendance_sheet.php");
+        header("Location: show_generated_attendance_sheet.php");
         exit(0);
     }
     else
