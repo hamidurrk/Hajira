@@ -71,7 +71,7 @@
                             <tr>
                                 <?php
                                 foreach ($columns as $column) {
-                                    ?> <th><?= $column ?> </th>
+                                    ?> <th style ="word-break:break-all;"><?= $column ?> </th>
                                 <?php
                                 }
                                 ?>
@@ -82,9 +82,6 @@
                                 $query3 = "SELECT id FROM `$selected_sheet` ORDER BY id DESC LIMIT 1;";
                                 $result3 = $con->query($query3);
                                 $id_limit = $result3->fetch_assoc();
-                                // echo $id_limit['id'];
-                                // $row = $result2->fetch_assoc();
-                                // echo $row["name"];
                                 for ($i = 1; $i <= $id_limit['id']; $i ++) {
                                     $query2 = "SELECT * FROM `$selected_sheet` WHERE id = $i";
                                     $result2 = mysqli_query($con, $query2);
