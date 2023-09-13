@@ -3,6 +3,10 @@ ADD COLUMN vendor_group INT NOT NULL; -->
 
 <?php
     session_start();
+    if (!isset($_SESSION['username'])) {
+        header("Location: login.php");
+        exit();
+    }
     require 'dbcon.php';
     // $current_date_time = date('dmY_Hi');
     if(isset($_GET['id']))
@@ -37,12 +41,12 @@ ADD COLUMN vendor_group INT NOT NULL; -->
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <title><?= $row["sheet_name"]; ?> - HAJIRA</title>
+    <title><?= $row["sheet_name"]; ?> - AMS</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.php">HAJIRA</a>
+            <a class="navbar-brand" href="index.php">AMS</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

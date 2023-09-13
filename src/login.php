@@ -1,22 +1,13 @@
-<?php
-    session_start();
-    if (!isset($_SESSION['username'])) {
-        header("Location: login.php");
-        exit();
-    }
-    require 'dbcon.php';
-?>
-<!doctype html>
+<!-- INSERT INTO users (user, password)
+VALUES ('admin', SHA2('admin', 256)); -->
+
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <title>AMS</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -28,9 +19,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.php">Home</a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.php">About</a>
                     </li>
@@ -39,33 +27,38 @@
                     </li>
                 </ul>
             </div>
-                <a href="logout.php" class="btn btn-danger float-end">Logout</a>
         </div>
     </nav>
-  
     <div class="container mt-5">
         <div class="jumbotron">
             <h1 class="display-4"><b>AMS</b></h1>
             <p class="lead">A student attendance management system for Bangladesh Agricultural University.</p>
         </div>
-        <div class="row mt-5">
+        <br>
+        <div class="row justify-content-left">
             <div class="col-md-6">
-                <a href="class.php" class="btn btn-secondary btn-block btn-lg mb-3">View All Students</a>
-            </div>
-            <div class="col-md-6">
-                <a href="view_attendance.php" class="btn btn-secondary btn-block btn-lg mb-3">View Attendance Records</a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <a href="student-create.php" class="btn btn-secondary btn-block btn-lg mb-3">Add New Student</a>
-            </div>
-            <div class="col-md-6">
-                <a href="attendance_sheet.php" class="btn btn-secondary btn-block btn-lg mb-3">Attendance Sheet</a>
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Login</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="login_process.php" method="POST">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="username" name="username" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
+
