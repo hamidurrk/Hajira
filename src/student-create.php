@@ -111,7 +111,6 @@ session_start();
                             <div class="mb-3">
                                 <button type="submit" name="save_student" class="btn btn-primary">Save Student</button>
                             </div>
-
                         </form>
                     </div>
                 </div>

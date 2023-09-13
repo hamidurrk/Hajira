@@ -12,7 +12,7 @@ ADD COLUMN vendor_group INT NOT NULL; -->
         $result1 = mysqli_query($con, $query1);
         $row = $result1->fetch_assoc();
     }
-    $selected_sheet = $row["sheet_name"]; 
+    $selected_sheet = $row['sheet_name']; 
     // try {
     //     $query_for_add = "ALTER TABLE `$selected_sheet` ADD COLUMN `$current_date_time` TINYINT(1) DEFAULT 0;";
     //     $result_for_add = mysqli_query($con, $query_for_add);

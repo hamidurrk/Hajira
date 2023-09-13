@@ -2,7 +2,7 @@
     session_start();
     require 'dbcon.php';
 
-    if(isset($_GET['id']))
+    if(isset($_GET['id']))                  //the 'id' here is actually 'sheet_id'
     {
         $id = mysqli_real_escape_string($con, $_GET['id']);
         $query1 = "SELECT * FROM sheets WHERE sheet_id='$id' ";
